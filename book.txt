@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+class Book{
+        private:string title;
+                string author;
+                int ISBN;
+                bool issuedStatus;
+       public:
+       Book(string title,string author,int ISBN)
+       {
+           this->title=title;
+           this->author=author;
+           this->ISBN=ISBN;
+       }
+       
+       void displayBook()
+       {
+           cout<<"\n1:title is"<<title<<"\n2:author is:"<<author<<"\n3:ISBN"<<ISBN;
+       }
+      
+      void issuedBook()
+      {
+          issuedStatus=true;
+          cout<<"Book has been successfully issued"<<endl;
+      }
+      void returnBook()
+      {
+          issuedStatus=false;
+          cout<<"Book has been successfully return"<<endl;
+      }
+      
+      ~Book()
+      {
+          cout<<"Book chori ho gya"<<endl;
+      }
+
+};
+
+int main()
+{
+   Book b("C++","Manish",101);
+   b.displayBook();
+   b.issuedBook();
+   b.returnBook();
+   
+   
+}
