@@ -1,0 +1,53 @@
+
+#include <iostream>
+
+using namespace std;
+
+class Person{
+    protected: string name;
+               string address;
+               int dob;
+    public: void setPerson(string name,string address,int dob)
+           {
+               this->name=name;
+               this->address=address;
+               this->dob=dob;
+           }
+           void displayDetails()
+           {
+               cout<<"\nname is"<<name<<"\naddress is"<<address<<"\n dob is"<<dob;
+           }
+};
+
+
+class Student:public Person{
+    private: int StudentID;
+             string major;
+    public : void setStudent(string name,string address,int dob,int StudentID,string major)
+            {
+               this->name=name;
+               this->address=address;
+               this->dob=dob;
+               this->StudentID=StudentID;
+               this->major=major;
+                
+            }
+            void displayStudy()
+            {
+               cout<<"\nname is"<<name<<"\naddress is"<<address<<"\n dob is"<<dob<<"\nStudentID is"<<StudentID<<"\nmajor"<<major;
+              
+            }
+};
+
+
+
+int main()
+{
+ Student objs;
+ objs.setStudent("Manish","Airoli",2000,101,"oops");
+ objs.displayStudy();
+ 
+ 
+
+
+}
